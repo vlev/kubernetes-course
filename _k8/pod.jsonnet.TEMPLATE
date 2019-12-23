@@ -1,0 +1,27 @@
+local newPodDefinition(app, port) = {
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "labels": {
+      "app": app
+    },
+    "name": app + ".example.com"
+  },
+  "spec": {
+    "containers": [
+      {
+        "image": "vitaliylevashin/" + app,
+        "name": app + "-demo",
+        "ports": [
+          {
+            "containerPort": port
+          }
+        ]
+      }
+    ]
+  }
+};
+
+{
+    newPodDefinition::newPodDefinition
+}
