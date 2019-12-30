@@ -7,3 +7,6 @@ Get pods details:
 
 Delete pod:
 `kubectl delete pod helloworld`
+
+Get logs:
+`kubectl logs node-example.example.com` 
