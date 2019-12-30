@@ -1,3 +1,11 @@
+# Minikube
+
+Show service description and open url in browser:
+`minikube service helloworld-service`
+
+Get Service url:
+`minikube service helloworld-service --url`
+
 # Kubectl
 ```kubectl get namespace```
 
