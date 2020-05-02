@@ -10,6 +10,13 @@ Show service description and open url in browser:
 Get Service url:
 `minikube service helloworld-service --url`
 
+#Network Namespaces
+Show Container's Namespace: 
+```shell script
+docker inspect --format '{{.State.Pid}}' 3d0ea7ee1645
+nsenter -t 4432 -n ip addr show
+``` 
+
 # Kubectl
 ```kubectl get namespace```
 
@@ -29,3 +36,10 @@ Delete pod:
 
 Get logs:
 `kubectl logs node-example.example.com` 
+
+#etcd
+```
+kubectl exec -n kube-system -it etcd-minikube -- /bin/sh
+alias e="etcdctl --key="server.key" --cert="server.crt" --cacert=ca.crt"
+e get / --prefix --keys-only
+```
